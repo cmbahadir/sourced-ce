@@ -69,7 +69,7 @@ type composeSetDefaultCmd struct {
 
 	Args struct {
 		// Version string `positional-arg-name:"version" description:"Either a revision (tag, full sha1) or a URL to a docker-compose.yml file"`
-		Index string `positional-arg-name:"version" description:"Either a revision (tag, full sha1) or a URL to a docker-compose.yml file"`
+		Index string `positional-arg-name:"index" description:"Index of the docker compose file returned from 'sourced compose list'"`
 	} `positional-args:"yes" required:"yes"`
 }
 
@@ -91,7 +91,6 @@ func (c *composeSetDefaultCmd) Execute(args []string) error {
 		fmt.Println("Provide the index of the docker compose file in 'sourced compose list'")
 	}
 
-	// err := composefile.SetActive(c.Args.Version)
 	return nil
 }
 
